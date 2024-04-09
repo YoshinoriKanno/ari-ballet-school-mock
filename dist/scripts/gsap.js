@@ -51,4 +51,31 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .from(".gsap-lead-3", { x: 300, opacity: 0, duration: 2 }, "-=1.5");
 
 
+
+
+  let typeSplit = new SplitType('[animate]', {
+    types: 'lines, words, chars',
+    tagName: 'span'
+  })
+
+  gsap.from('[animate] .line', {
+    // ScrollTriggerを設定して、スクロール位置に基づいたトリガーを定義します。
+    scrollTrigger: {
+      trigger: ".gsap-section", // アニメーションのトリガーとなる要素を指定します。
+      start: "top center", // ビューポートの上部中央が".gsap-section"の上部に達した時にアニメーションを開始します。
+      end: "bottom center", // ビューポートの下部中央が".gsap-section"の下部に達した時にアニメーションを終了します。
+      toggleActions: "play none none none", // スクロールに応じてアニメーションの動作を定義します。この場合、要素がビューポートに入ったときにアニメーションを再生します。
+
+      scrub: 1, // スクロール動作に連動してアニメーションが進行・逆行するようにします。
+      markers: true, // 開発目的でスクロールトリガーの開始点と終了点をビジュアルマーカーとして表示します。
+    },
+    y: '100%',
+    opacity: 0,
+    duration: 0.5,
+    ease: 'power1.out',
+    stagger: 0.1,
+
+  })
+
+
 });
