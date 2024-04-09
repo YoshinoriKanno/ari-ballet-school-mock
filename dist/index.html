@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="tailwindcss-out.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./styles/tailwindcss-out.css">
+    <link rel="stylesheet" href="./styles/style.css">
 
 
 
@@ -15,8 +15,8 @@
   </head>
 
   <body class="">
-    <div class="overflow-hidden text-center bg-red-50">
-      <header class="fixed z-10 pt-[400px] pl-[80px] bg-gray-400 ">
+    <div class="overflow-hidden bg-red-50">
+      <header class="fixed z-10 pt-[400px] pl-[80px] bg-pink-400 ">
         <h1 class="rotate-[-90deg] origin-top-left bg-red-50 absolute left-12 top-[320px] w-[320px] h-[64px]"><a href=""><img src="https://placehold.jp/320x64.png?text=logo" alt=""></a></h1>
 
         <ul>
@@ -34,12 +34,18 @@
             <li><a href="" class="pr-4">menu 4</a></li>
           </ul>
         </nav>
-        <div class="relative gsap-kv">
+        <section class="relative gsap-kv">
           <p class="-mr-16"><img src="https://placehold.jp/1800x1200.png?text=key visual" alt=""></p>
           <p class="absolute text-left bottom-32 left-8">Lorem ipsum dolor sit amet consectetur, adipisicing elit. <br>
             Voluptatem similique obcaecati alias assumenda fuga saepe magni modi eum quas ab, ex, <br>ullam blanditiis vitae sit perspiciatis eligendi. </p>
-        </div>
-        aa
+        </section>
+        <section class="pt-16 gsap-section">
+          <h2 class="text-5xl gsap-heading">Heading 01</h2>
+          <p class="gsap-lead-1">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p class="gsap-lead-2">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          <p class="gsap-lead-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+
+        </section>
       </main>
 
       <div style=" background-color: lightcoral; height: 1000px;"></div>
@@ -50,28 +56,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", (event) => {
+    <script src="./scripts/gsap.js"></script>
 
-        // GSAPライブラリを使用して".box"クラスを持つ要素に対してアニメーションを定義します。
-        gsap.to(".box", {
-          // ScrollTriggerを設定して、スクロール位置に基づいたトリガーを定義します。
-          scrollTrigger: {
-            trigger: ".box", // アニメーションのトリガーとなる要素を指定します（この場合は".box"クラスを持つ要素）。
-            start: "top center", // ビューポートの上部中央が".box"の上部に達した時にアニメーションを開始します。
-            end: "bottom center", // ビューポートの下部中央が".box"の下部に達した時にアニメーションを終了します。
-            scrub: 1, // スクロール動作に連動してアニメーションが進行・逆行するようにします。この値はアニメーションがどれくらい"粘着"するかを表します。
-            markers: true, // 開発目的でスクロールトリガーの開始点と終了点をビジュアルマーカーとして表示します。
-          },
-          x: 300, // 水平方向へ300ピクセル移動させます。
-          // rotation: 360, // 360度回転させます。
-          // duration: 2, // アニメーションの持続時間を2秒間に設定します。
-        });
-
-        gsap.from(".gsap-kv", { x: 300, duration: 2 })
-
-      });
-    </script>
+    <script type="module" src="scripts/main.js"></script>
 
   </body>
 
